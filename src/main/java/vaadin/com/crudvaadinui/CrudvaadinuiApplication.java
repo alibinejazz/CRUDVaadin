@@ -43,7 +43,7 @@ public class CrudvaadinuiApplication {
 			log.info("Customer found with findByLastNameStartsWithIgnoreCase('Bauer'):");
 			log.info("--------------------------------------------");
 			for (Customer bauer : repository
-					.findByLastNameStartWithIgnoreCase("Bauer")) {
+					.findByfirstNameStartsWithIgnoreCase("Bauer")) {
 				log.info(bauer.toString());
 			}
 			log.info("");

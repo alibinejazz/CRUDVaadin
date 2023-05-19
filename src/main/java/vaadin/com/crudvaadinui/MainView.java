@@ -39,11 +39,8 @@ public class MainView extends VerticalLayout {
 		grid.setColumns("id", "firstName", "lastName");
 		grid.getColumnByKey("id").setWidth("50px").setFlexGrow(0);
 
-		filter.setPlaceholder("Filter by last name");
+		filter.setPlaceholder("Filter by first name");
 
-		// Hook logic to components
-
-		// Replace listing with filtered content when user changes filter
 		filter.setValueChangeMode(ValueChangeMode.EAGER);
 		filter.addValueChangeListener(e -> listCustomers(e.getValue()));
 
@@ -71,7 +68,7 @@ public class MainView extends VerticalLayout {
 			grid.setItems(repo.findAll());
 		}
 		else {
-			grid.setItems(repo.findByLastNameStartWithIgnoreCase(filterText));
+			grid.setItems(repo.findByfirstNameStartsWithIgnoreCase(filterText));
 		}
 	}
 	// end::listCustomers[]
